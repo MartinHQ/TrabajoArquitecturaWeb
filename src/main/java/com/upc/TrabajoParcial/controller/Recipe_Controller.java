@@ -24,7 +24,7 @@ public class Recipe_Controller {
         return new ResponseEntity<>(recipeService.Listar(), HttpStatus.OK);
     }
     @PostMapping("/insertar")
-    public ResponseEntity<Recipe> Insertar(@RequestBody Recipe recipe){
-        return new ResponseEntity<>(recipeService.insertar(recipe),HttpStatus.CREATED);
+    public ResponseEntity<List<Recipe>> Insertar(@RequestBody List<Recipe> recipes){
+        return new ResponseEntity<>(recipeService.insertar(recipes),HttpStatus.CREATED);
     }
 }

@@ -19,13 +19,17 @@ public class Ingredient_Controller {
         this.ingredientService = ingredientService;
     }
 
-    @GetMapping("/listar")
+    @GetMapping("/showList")
     public ResponseEntity<List<Ingredient>> Listar(){
-        return new ResponseEntity<>(ingredientService.Listar(), HttpStatus.OK);
+        return new ResponseEntity<>(ingredientService.Show(), HttpStatus.OK);
     }
 
-    @PostMapping("/insertar")
+    @PostMapping("/insert")
     public ResponseEntity<Ingredient> Insertar(@RequestBody Ingredient ingredient){
-        return new ResponseEntity<>(ingredientService.insertar(ingredient), HttpStatus.CREATED);
+        return new ResponseEntity<>(ingredientService.Insert(ingredient), HttpStatus.CREATED);
+    }
+    @PostMapping("/insertList")
+    public ResponseEntity<List<Ingredient>> Insertar(@RequestBody List<Ingredient> ingredients){
+        return new ResponseEntity<>(ingredientService.InsertListIngredient(ingredients), HttpStatus.CREATED);
     }
 }

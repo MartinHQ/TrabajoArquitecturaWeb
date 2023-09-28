@@ -16,11 +16,14 @@ public class Ingredient_Service {
         this.ingredientRepository = ingredientRepository;
     }
 
-    public List<Ingredient> Listar(){
+    public List<Ingredient> Show(){
         return ingredientRepository.findAll();
     }
-    public Ingredient insertar(Ingredient ingredient){
+    public Ingredient Insert(Ingredient ingredient){
         return ingredientRepository.save(ingredient);
+    }
+    public List<Ingredient> InsertListIngredient(List<Ingredient> ingredients){
+        return ingredientRepository.saveAll(ingredients);
     }
 
 }
