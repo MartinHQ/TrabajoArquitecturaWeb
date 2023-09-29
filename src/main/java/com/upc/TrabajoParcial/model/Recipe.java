@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Time;
 import java.util.List;
 
 @Entity
@@ -19,8 +20,9 @@ public class Recipe {
 
     private String Rcp_name;
     private String Rcp_description;
-    private String Rcp_time_preparation;
+    private Long Rcp_time_preparation;
     private String Rcp_image;
+    private String Difficulty;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Fk_foodLabel")
