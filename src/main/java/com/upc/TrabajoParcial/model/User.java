@@ -19,7 +19,7 @@ public class User {
     private String email;
     private String password;
 
-
+//probando github
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "User_Recipe", joinColumns =
     @JoinColumn(name = "user_id", referencedColumnName = "id"),
