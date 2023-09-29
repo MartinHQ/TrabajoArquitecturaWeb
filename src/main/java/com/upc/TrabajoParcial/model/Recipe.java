@@ -24,4 +24,7 @@ public class Recipe {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_Step_id",referencedColumnName = "Recipe_id")
     private List<Recipe_Instruction> Rcp_instruction;
+
+    @ManyToMany(mappedBy = "recipes")
+    private List<User> User;
 }

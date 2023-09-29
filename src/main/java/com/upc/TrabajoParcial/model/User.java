@@ -1,12 +1,11 @@
 package com.upc.TrabajoParcial.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -19,4 +18,12 @@ public class User {
     private String name;
     private String email;
     private String password;
+
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinTable(name = "User_Recipe", joinColumns =
+    @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "recipe_id",referencedColumnName = "Recipe_id")
+    )
+    private List<Recipe> recipes;
 }
