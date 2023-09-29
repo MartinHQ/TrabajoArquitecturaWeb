@@ -28,8 +28,4 @@ public class Ingredient_Controller {
     public ResponseEntity<Ingredient> Insertar(@RequestBody Ingredient ingredient){
         return new ResponseEntity<>(ingredientService.Insert(ingredient), HttpStatus.CREATED);
     }
-    @PostMapping("/insertList")
-    public ResponseEntity<List<Ingredient>> Insertar(@RequestBody List<Ingredient> ingredients){
-        return new ResponseEntity<>(ingredientService.InsertListIngredient(ingredients), HttpStatus.CREATED);
-    }
 }

@@ -19,11 +19,14 @@ public class User {
     private String email;
     private String password;
 
-//probando
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "User_Recipe", joinColumns =
     @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "recipe_id",referencedColumnName = "Recipe_id")
-    )
+            inverseJoinColumns = @JoinColumn(name = "recipe_id",referencedColumnName = "Recipe_id"))
     private List<Recipe> recipes;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Fk_foodLabel")
+    private Food_Label foodLabel;
 }

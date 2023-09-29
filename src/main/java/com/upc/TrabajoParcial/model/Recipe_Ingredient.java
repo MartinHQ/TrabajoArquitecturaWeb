@@ -17,12 +17,12 @@ public class Recipe_Ingredient {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    @JoinColumn(name="recipe_id")
+    @JoinColumn(name="Fk_recipe_id")
     private Recipe recipe;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    @JoinColumn(name = "ingredient_id")
+    @JoinColumn(name = "Fk_ingredient_id")
     private Ingredient ingredient;
 
     private Double quantity;

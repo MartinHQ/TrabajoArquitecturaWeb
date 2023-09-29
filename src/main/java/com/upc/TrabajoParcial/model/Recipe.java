@@ -16,15 +16,17 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Recipe_id")
     private Long Rcp_id;
+
     private String Rcp_name;
     private String Rcp_description;
     private String Rcp_time_preparation;
     private String Rcp_image;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_Step_id",referencedColumnName = "Recipe_id")
-    private List<Recipe_Instruction> Rcp_instruction;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Fk_foodLabel")
+    private Food_Label foodLabel;
 
-    @ManyToMany(mappedBy = "recipes")
-    private List<User> User;
+   /* @ManyToMany(fetch =FetchType.LAZY,mappedBy = "recipes")
+    private List<User> User;*/
+
 }

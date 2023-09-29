@@ -22,8 +22,5 @@ public class Ingredient_Service {
     public Ingredient Insert(Ingredient ingredient){
         return ingredientRepository.save(ingredient);
     }
-    public List<Ingredient> InsertListIngredient(List<Ingredient> ingredients){
-        return ingredientRepository.saveAll(ingredients);
-    }
 
 }

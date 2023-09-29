@@ -18,7 +18,7 @@ public class Recipe_Service {
     public List<Recipe> Listar(){
         return recipeRepository.findAll();
     }
-    public List<Recipe> insertar( List<Recipe> recipes){
-        return recipeRepository.saveAll(recipes);
+    public Recipe insertar( Recipe recipe){
+        return recipeRepository.save(recipe);
     }
 }

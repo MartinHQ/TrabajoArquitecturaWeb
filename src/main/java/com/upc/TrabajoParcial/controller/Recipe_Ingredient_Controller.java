@@ -1,6 +1,5 @@
 package com.upc.TrabajoParcial.controller;
 
-import com.upc.TrabajoParcial.model.Ingredient;
 import com.upc.TrabajoParcial.model.Recipe_Ingredient;
 import com.upc.TrabajoParcial.service.Recipe_Ingredient_Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/ListaIngredientes")
-public class Ingredient_Recipe_Controller {
+public class Recipe_Ingredient_Controller {
     @Autowired
     final private Recipe_Ingredient_Service recipeIngredientService;
 
-    public Ingredient_Recipe_Controller(Recipe_Ingredient_Service recipeIngredientService) {
+    public Recipe_Ingredient_Controller(Recipe_Ingredient_Service recipeIngredientService) {
         this.recipeIngredientService = recipeIngredientService;
     }
     @GetMapping("/listar")
